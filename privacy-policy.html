@@ -21,7 +21,7 @@
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last Updated: January 2, 2026</p>
+    <p class="last-updated">Last Updated: February 22, 2026</p>
 
     <h2>1. Introduction</h2>
     <p>Welcome to HealthyLiving ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our mobile application.</p>
@@ -36,6 +36,7 @@
         <li><strong>Workout Data:</strong> Completed workouts, exercises, sets, reps, and weights (when logged)</li>
         <li><strong>Water Intake:</strong> Daily water consumption logs</li>
         <li><strong>API Keys (Optional):</strong> Google Gemini API key and/or USDA FoodData Central API key (stored securely in device Keychain)</li>
+        <li><strong>Apple Health Data (Optional):</strong> If you enable Apple Health sync, the app reads active calories, step count, and weight entries from Apple Health, and writes weight, height, nutrition, water intake, and workout data to Apple Health. All syncing happens locally on your device. You can enable or disable individual data categories at any time.</li>
     </ul>
 
     <h3>2.2 Automatically Collected Information</h3>
@@ -45,13 +46,32 @@
         <li><strong>Crash Reports:</strong> Technical data about app crashes or errors (if analytics enabled)</li>
     </ul>
 
-    <h3>2.3 Photos and Camera Access</h3>
-    <p>When you use the food recognition feature, we request access to your device's camera and photo library. Photos are:</p>
+    <h3>2.3 Photos, Camera Access, and Barcode Scanning</h3>
+    <p>When you use the food recognition or barcode scanning features, we request access to your device's camera and photo library. Photos are:</p>
     <ul>
         <li>Stored locally on your device only</li>
         <li>Never uploaded to our servers</li>
         <li>Only sent to third-party AI services (Google Gemini) if you have configured an API key and explicitly choose to use AI recognition</li>
     </ul>
+    <p>The app offers two food recognition modes:</p>
+    <ul>
+        <li><strong>On-device recognition (Apple Vision):</strong> Uses Apple's Vision framework, which runs entirely on your device. No photo or data leaves your device. No API key required.</li>
+        <li><strong>Cloud AI recognition (Google Gemini):</strong> Sends a photo to Google's Gemini API for enhanced accuracy on complex or restaurant dishes. Only used when you have configured a Gemini API key and explicitly select this mode. See Section 5.1 for details.</li>
+    </ul>
+    <p>When you use the barcode scanner:</p>
+    <ul>
+        <li>The camera is used to detect barcodes on food products</li>
+        <li>No images or video are stored — only the decoded barcode number is used</li>
+        <li>The barcode is sent to Open Food Facts to look up product information (see Section 5)</li>
+    </ul>
+
+    <h3>2.4 Apple Health (HealthKit)</h3>
+    <p>If you enable Apple Health integration in Settings, the app accesses HealthKit data on your device. This includes:</p>
+    <ul>
+        <li><strong>Data written:</strong> Weight, height, nutrition (calories, protein, carbs, fat, fiber, sugar, sodium), water intake, and completed workouts</li>
+        <li><strong>Data read:</strong> Active calories burned, step count, and weight entries from external sources (smart scales, other apps)</li>
+    </ul>
+    <p>All HealthKit data is exchanged locally between HealthyLiving and Apple Health on your device. It is never sent to our servers or any third party. You can enable or disable individual read and write categories at any time in Settings → Apple Health.</p>
 
     <h2>3. How We Use Your Information</h2>
     <p>We use the collected information to:</p>
@@ -103,13 +123,29 @@
         <li><strong>Your Control:</strong> Only used when configured and food logging occurs</li>
     </ul>
 
+    <h4>Open Food Facts</h4>
+    <ul>
+        <li><strong>Purpose:</strong> Product identification and nutritional data from a crowd-sourced food database</li>
+        <li><strong>Data Sent:</strong> Food search queries and/or product barcodes</li>
+        <li><strong>Open Food Facts Privacy:</strong> <a href="https://world.openfoodfacts.org/privacy">https://world.openfoodfacts.org/privacy</a></li>
+        <li><strong>Your Control:</strong> Only used when you search the Open Food Facts database or scan a barcode. No API key is required. No personal data is sent — only the search term or barcode number.</li>
+    </ul>
+
+    <h4>Apple Health (HealthKit)</h4>
+    <ul>
+        <li><strong>Purpose:</strong> Sync health and fitness data between HealthyLiving and Apple Health</li>
+        <li><strong>Data Exchanged:</strong> Weight, height, nutrition, water intake, workouts, active calories, steps (all locally on-device)</li>
+        <li><strong>Apple Privacy:</strong> <a href="https://www.apple.com/privacy/">https://www.apple.com/privacy/</a></li>
+        <li><strong>Your Control:</strong> Disabled by default. You must explicitly enable sync in Settings, and can toggle individual data categories on or off at any time.</li>
+    </ul>
+
     <h3>5.2 No Analytics or Advertising</h3>
     <p>We do not use third-party analytics services (like Google Analytics or Facebook SDK) and we do not display advertisements.</p>
 
     <h2>6. Data Sharing</h2>
     <p><strong>We do not sell, rent, or share your personal data with any third parties</strong>, except:</p>
     <ul>
-        <li>When you explicitly use optional third-party API features (Gemini AI, USDA)</li>
+        <li>When you explicitly use optional third-party features (Gemini AI, USDA, Open Food Facts, Apple Health)</li>
         <li>If required by law or legal process</li>
         <li>To protect our rights, property, or safety</li>
     </ul>
@@ -119,20 +155,21 @@
     <h3>7.1 Access Your Data</h3>
     <p>You can view all your data within the app at any time:</p>
     <ul>
-        <li>Profile: View/edit in Profile tab</li>
-        <li>Food logs: View in Dashboard and Status tabs</li>
-        <li>Weight history: View in Profile → Weight section</li>
+        <li>Profile: View/edit in Settings → Health Information</li>
+        <li>Food logs: View in Today and Nutrition tabs</li>
+        <li>Weight history: View in Weight tab</li>
         <li>Workout logs: View in Fitness Plan tab</li>
+        <li>Progress and analytics: View in Status tab</li>
     </ul>
-<!--
+
     <h3>7.2 Export Your Data</h3>
     <p>You can export all your data in JSON format:</p>
     <ul>
         <li>Go to Settings → Data Management → Export Data</li>
         <li>Receive a complete copy of all your health information</li>
     </ul>
--->
-    <h3>7.2 Delete Your Data</h3>
+
+    <h3>7.3 Delete Your Data</h3>
     <p>You can delete all your data at any time:</p>
     <ul>
         <li>Go to Settings → Data Management → Delete All Data</li>
@@ -140,18 +177,20 @@
         <li>All local data, photos, and API keys will be permanently removed</li>
     </ul>
 
-    <h3>7.3 Opt-Out of API Services</h3>
-    <p>You can stop using third-party APIs by:</p>
+    <h3>7.4 Opt-Out of Third-Party Services</h3>
+    <p>You can stop using third-party services at any time:</p>
     <ul>
-        <li>Deleting your API keys in Settings</li>
-        <li>Using only manual food entry and local features</li>
+        <li>Delete your API keys in Settings to disable Gemini AI and USDA</li>
+        <li>Avoid the Open Food Facts and Scan Barcode tabs to stop querying Open Food Facts</li>
+        <li>Turn off Apple Health sync in Settings → Apple Health (or disable individual categories)</li>
+        <li>Use only manual food entry and local features</li>
     </ul>
 
     <h2>8. Children's Privacy</h2>
     <p>HealthyLiving is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us to delete it.</p>
 
     <h2>9. International Users</h2>
-    <p>HealthyLiving stores all data locally on your device. If you use optional API features and are located outside the United States, your data may be transmitted to servers in other countries (Google servers for Gemini AI, USDA servers in the US).</p>
+    <p>HealthyLiving stores all data locally on your device. If you use optional API features and are located outside the United States, your data may be transmitted to servers in other countries (Google servers for Gemini AI, USDA servers in the US, Open Food Facts servers in France). Apple Health data always stays on your device and is never transmitted externally.</p>
 
     <h2>10. Changes to This Privacy Policy</h2>
     <p>We may update this Privacy Policy from time to time. Changes will be reflected with a new "Last Updated" date at the top. We will notify you of significant changes through the app or via the app store update notes.</p>
@@ -159,7 +198,7 @@
     <h2>11. Contact Us</h2>
     <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
     <ul>
-        <li><strong>Email:</strong> apphealthyliving@gmail.com </li>
+        <li><strong>Email:</strong> apphealthyliving@gmail.com</li>
         <li><strong>App Store:</strong> Leave a review or contact through App Store Connect</li>
     </ul>
 
