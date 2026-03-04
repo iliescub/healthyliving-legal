@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - HealthyLiving</title>
+    <title>Privacy Policy - WellFit</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
@@ -21,10 +21,10 @@
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last Updated: February 22, 2026</p>
+    <p class="last-updated">Last Updated: March 4, 2026</p>
 
     <h2>1. Introduction</h2>
-    <p>Welcome to HealthyLiving ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our mobile application.</p>
+    <p>Welcome to WellFit ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our mobile application.</p>
 
     <h2>2. Information We Collect</h2>
 
@@ -35,29 +35,28 @@
         <li><strong>Weight Tracking:</strong> Weight measurements, dates, and optional notes</li>
         <li><strong>Workout Data:</strong> Completed workouts, exercises, sets, reps, and weights (when logged)</li>
         <li><strong>Water Intake:</strong> Daily water consumption logs</li>
-        <li><strong>API Keys (Optional):</strong> Google Gemini API key and/or USDA FoodData Central API key (stored securely in device Keychain)</li>
         <li><strong>Apple Health Data (Optional):</strong> If you enable Apple Health sync, the app reads active calories, step count, and weight entries from Apple Health, and writes weight, height, nutrition, water intake, and workout data to Apple Health. All syncing happens locally on your device. You can enable or disable individual data categories at any time.</li>
     </ul>
 
     <h3>2.2 Automatically Collected Information</h3>
     <ul>
         <li><strong>Device Information:</strong> Device type, operating system version, app version</li>
-        <li><strong>Usage Data:</strong> Features used, app interactions, session duration</li>
-        <li><strong>Crash Reports:</strong> Technical data about app crashes or errors (if analytics enabled)</li>
     </ul>
+    <p>We do not collect analytics, usage data, crash reports, or any other automatically gathered information beyond what is strictly necessary to operate the app.</p>
 
     <h3>2.3 Photos, Camera Access, and Barcode Scanning</h3>
     <p>When you use the food recognition or barcode scanning features, we request access to your device's camera and photo library. Photos are:</p>
     <ul>
         <li>Stored locally on your device only</li>
         <li>Never uploaded to our servers</li>
-        <li>Only sent to third-party AI services (Google Gemini) if you have configured an API key and explicitly choose to use AI recognition</li>
+        <li>Sent to Google Gemini AI when you use the AI photo scanning feature (see Section 5.1)</li>
     </ul>
     <p>The app offers two food recognition modes:</p>
     <ul>
-        <li><strong>On-device recognition (Apple Vision):</strong> Uses Apple's Vision framework, which runs entirely on your device. No photo or data leaves your device. No API key required.</li>
-        <li><strong>Cloud AI recognition (Google Gemini):</strong> Sends a photo to Google's Gemini API for enhanced accuracy on complex or restaurant dishes. Only used when you have configured a Gemini API key and explicitly select this mode. See Section 5.1 for details.</li>
+        <li><strong>Cloud AI recognition (Google Gemini) — online:</strong> Sends a photo to Google's Gemini API for food identification and nutrition estimation. Used automatically when you are connected to the internet and tap the photo scan button.</li>
+        <li><strong>On-device recognition (Apple Vision) — offline fallback:</strong> Uses Apple's Vision framework, which runs entirely on your device. Used automatically when you have no internet connection. No photo or data leaves your device. Offline scans do not count against your daily limit.</li>
     </ul>
+    <p>No API keys or account credentials are required from you. WellFit uses its own developer API credentials to access these services on your behalf.</p>
     <p>When you use the barcode scanner:</p>
     <ul>
         <li>The camera is used to detect barcodes on food products</li>
@@ -71,7 +70,7 @@
         <li><strong>Data written:</strong> Weight, height, nutrition (calories, protein, carbs, fat, fiber, sugar, sodium), water intake, and completed workouts</li>
         <li><strong>Data read:</strong> Active calories burned, step count, and weight entries from external sources (smart scales, other apps)</li>
     </ul>
-    <p>All HealthKit data is exchanged locally between HealthyLiving and Apple Health on your device. It is never sent to our servers or any third party. You can enable or disable individual read and write categories at any time in Settings → Apple Health.</p>
+    <p>All HealthKit data is exchanged locally between WellFit and Apple Health on your device. It is never sent to our servers or any third party. You can enable or disable individual read and write categories at any time in Settings → Apple Health.</p>
 
     <h2>3. How We Use Your Information</h2>
     <p>We use the collected information to:</p>
@@ -80,7 +79,6 @@
         <li>Generate custom fitness programs tailored to your goals</li>
         <li>Track your daily nutrition intake and progress toward goals</li>
         <li>Display analytics and trends about your health data</li>
-        <li>Improve app functionality and user experience</li>
         <li>Provide customer support when requested</li>
     </ul>
 
@@ -96,56 +94,60 @@
         <li>Photos (stored in app-specific directory)</li>
     </ul>
 
-    <h3>4.2 Secure Storage</h3>
-    <p>API keys are stored securely in your device's Keychain, which uses encryption to protect sensitive data.</p>
-
-    <h3>4.3 No Cloud Backup</h3>
+    <h3>4.2 No Cloud Backup</h3>
     <p>We do not maintain any cloud servers or databases. Your data stays on your device and is backed up only through your device's iCloud or iTunes backup (if enabled).</p>
 
     <h2>5. Third-Party Services</h2>
 
-    <h3>5.1 Optional API Integrations</h3>
-    <p>If you choose to configure API keys, the app may communicate with:</p>
+    <h3>5.1 Services Used by WellFit</h3>
+    <p>WellFit communicates with the following third-party services on your behalf. No personal information (name, email, location) is sent to any of these services.</p>
 
     <h4>Google Gemini AI</h4>
     <ul>
         <li><strong>Purpose:</strong> AI-powered food recognition and nutrition estimation</li>
-        <li><strong>Data Sent:</strong> Food photos (converted to base64), food names</li>
+        <li><strong>Data Sent:</strong> Food photos (when you use the photo scan feature)</li>
+        <li><strong>When Used:</strong> Only when you explicitly tap the photo scan button and are connected to the internet</li>
         <li><strong>Google's Privacy Policy:</strong> <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
-        <li><strong>Your Control:</strong> Only used when you explicitly select "AI Powered" recognition and have configured an API key</li>
     </ul>
 
     <h4>USDA FoodData Central</h4>
     <ul>
-        <li><strong>Purpose:</strong> Accurate nutritional information from verified database</li>
-        <li><strong>Data Sent:</strong> Food search queries, food IDs</li>
-        <li><strong>USDA Privacy:</strong> <a href="https://www.usda.gov/privacy-policy">https://www.usda.gov/privacy-policy</a></li>
-        <li><strong>Your Control:</strong> Only used when configured and food logging occurs</li>
+        <li><strong>Purpose:</strong> Accurate nutritional information from a verified government database</li>
+        <li><strong>Data Sent:</strong> Food search queries and food IDs (no personal data)</li>
+        <li><strong>When Used:</strong> When you search the USDA database in the Nutrition tab</li>
+        <li><strong>USDA Privacy Policy:</strong> <a href="https://www.usda.gov/privacy-policy">https://www.usda.gov/privacy-policy</a></li>
     </ul>
 
     <h4>Open Food Facts</h4>
     <ul>
         <li><strong>Purpose:</strong> Product identification and nutritional data from a crowd-sourced food database</li>
-        <li><strong>Data Sent:</strong> Food search queries and/or product barcodes</li>
-        <li><strong>Open Food Facts Privacy:</strong> <a href="https://world.openfoodfacts.org/privacy">https://world.openfoodfacts.org/privacy</a></li>
-        <li><strong>Your Control:</strong> Only used when you search the Open Food Facts database or scan a barcode. No API key is required. No personal data is sent — only the search term or barcode number.</li>
+        <li><strong>Data Sent:</strong> Food search queries and/or product barcodes (no personal data)</li>
+        <li><strong>When Used:</strong> When you search Open Food Facts or scan a barcode</li>
+        <li><strong>Open Food Facts Privacy Policy:</strong> <a href="https://world.openfoodfacts.org/privacy">https://world.openfoodfacts.org/privacy</a></li>
     </ul>
 
     <h4>Apple Health (HealthKit)</h4>
     <ul>
-        <li><strong>Purpose:</strong> Sync health and fitness data between HealthyLiving and Apple Health</li>
+        <li><strong>Purpose:</strong> Sync health and fitness data between WellFit and Apple Health</li>
         <li><strong>Data Exchanged:</strong> Weight, height, nutrition, water intake, workouts, active calories, steps (all locally on-device)</li>
-        <li><strong>Apple Privacy:</strong> <a href="https://www.apple.com/privacy/">https://www.apple.com/privacy/</a></li>
+        <li><strong>Apple Privacy Policy:</strong> <a href="https://www.apple.com/privacy/">https://www.apple.com/privacy/</a></li>
         <li><strong>Your Control:</strong> Disabled by default. You must explicitly enable sync in Settings, and can toggle individual data categories on or off at any time.</li>
     </ul>
 
+    <h4>Apple StoreKit (Subscriptions)</h4>
+    <ul>
+        <li><strong>Purpose:</strong> Processing and managing WellFit Pro subscription payments</li>
+        <li><strong>Data Handled:</strong> Subscription purchases are processed entirely by Apple via your Apple ID. WellFit does not receive or store any payment information.</li>
+        <li><strong>Apple Privacy Policy:</strong> <a href="https://www.apple.com/privacy/">https://www.apple.com/privacy/</a></li>
+    </ul>
+
     <h3>5.2 No Analytics or Advertising</h3>
-    <p>We do not use third-party analytics services (like Google Analytics or Facebook SDK) and we do not display advertisements.</p>
+    <p>We do not use third-party analytics services (like Google Analytics or Facebook SDK) and we do not display advertisements. No tracking or advertising SDKs are included in the app.</p>
 
     <h2>6. Data Sharing</h2>
     <p><strong>We do not sell, rent, or share your personal data with any third parties</strong>, except:</p>
     <ul>
-        <li>When you explicitly use optional third-party features (Gemini AI, USDA, Open Food Facts, Apple Health)</li>
+        <li>When you explicitly use optional third-party features (Gemini AI food scanning, USDA search, Open Food Facts/barcode scanning, Apple Health)</li>
         <li>If required by law or legal process</li>
         <li>To protect our rights, property, or safety</li>
     </ul>
@@ -163,34 +165,41 @@
     </ul>
 
     <h3>7.2 Export Your Data</h3>
-    <p>You can export all your data in JSON format:</p>
+    <p>Pro subscribers can export all their data in JSON format:</p>
     <ul>
         <li>Go to Settings → Data Management → Export Data</li>
         <li>Receive a complete copy of all your health information</li>
     </ul>
 
     <h3>7.3 Delete Your Data</h3>
-    <p>You can delete all your data at any time:</p>
+    <p>You can delete your data at any time:</p>
     <ul>
-        <li>Go to Settings → Data Management → Delete All Data</li>
-        <li>Confirm deletion (this action is permanent and cannot be undone)</li>
-        <li>All local data, photos, and API keys will be permanently removed</li>
+        <li>Go to Settings → Data Management to delete data by category</li>
+        <li>Deletion is permanent and cannot be undone</li>
+        <li>Uninstalling the app removes all locally stored data</li>
     </ul>
 
-    <h3>7.4 Opt-Out of Third-Party Services</h3>
+    <h3>7.4 Manage Your Subscription</h3>
+    <p>You can manage or cancel your WellFit Pro subscription at any time through Apple's App Store:</p>
+    <ul>
+        <li>Settings → [your Apple ID] → Subscriptions on your device</li>
+        <li>Or visit: <a href="https://apps.apple.com/account/subscriptions">https://apps.apple.com/account/subscriptions</a></li>
+    </ul>
+
+    <h3>7.5 Opt-Out of Third-Party Services</h3>
     <p>You can stop using third-party services at any time:</p>
     <ul>
-        <li>Delete your API keys in Settings to disable Gemini AI and USDA</li>
+        <li>Avoid the Photos tab to stop sending food images to Google Gemini</li>
         <li>Avoid the Open Food Facts and Scan Barcode tabs to stop querying Open Food Facts</li>
         <li>Turn off Apple Health sync in Settings → Apple Health (or disable individual categories)</li>
         <li>Use only manual food entry and local features</li>
     </ul>
 
     <h2>8. Children's Privacy</h2>
-    <p>HealthyLiving is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us to delete it.</p>
+    <p>WellFit is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us to delete it.</p>
 
     <h2>9. International Users</h2>
-    <p>HealthyLiving stores all data locally on your device. If you use optional API features and are located outside the United States, your data may be transmitted to servers in other countries (Google servers for Gemini AI, USDA servers in the US, Open Food Facts servers in France). Apple Health data always stays on your device and is never transmitted externally.</p>
+    <p>WellFit stores all data locally on your device. If you use features that contact third-party services, your data may be transmitted to servers in other countries (Google servers for Gemini AI, USDA servers in the US, Open Food Facts servers in France). Apple Health data always stays on your device and is never transmitted externally.</p>
 
     <h2>10. Changes to This Privacy Policy</h2>
     <p>We may update this Privacy Policy from time to time. Changes will be reflected with a new "Last Updated" date at the top. We will notify you of significant changes through the app or via the app store update notes.</p>
@@ -211,7 +220,7 @@
         <li><strong>Right to Rectification:</strong> Correct inaccurate data</li>
         <li><strong>Right to Erasure:</strong> Delete your data</li>
         <li><strong>Right to Data Portability:</strong> Export your data</li>
-        <li><strong>Right to Withdraw Consent:</strong> Stop using API features</li>
+        <li><strong>Right to Withdraw Consent:</strong> Stop using third-party features at any time</li>
     </ul>
 
     <h3>CCPA (California Users)</h3>
@@ -223,11 +232,11 @@
     </ul>
 
     <h2>13. Health Data Disclaimer</h2>
-    <p><strong>Important:</strong> HealthyLiving is not a medical device and should not be used as a substitute for professional medical advice, diagnosis, or treatment. The nutritional calculations and fitness recommendations are for informational purposes only. Always consult with a qualified healthcare provider before starting any diet or exercise program.</p>
+    <p><strong>Important:</strong> WellFit is not a medical device and should not be used as a substitute for professional medical advice, diagnosis, or treatment. The nutritional calculations and fitness recommendations are for informational purposes only. Always consult with a qualified healthcare provider before starting any diet or exercise program.</p>
 
     <hr>
     <p style="text-align: center; color: #666; margin-top: 50px;">
-        © 2026 HealthyLiving. All rights reserved.
+        © 2026 WellFit. All rights reserved.
     </p>
 </body>
 </html>
